@@ -2,33 +2,46 @@ csv-parser
 ==========
 
 A simple CSV Parser library written in C++
+
 To know more about CSV - http://en.wikipedia.org/wiki/Comma-separated_values
+
 Test cases borrowed from the same wiki
+
 To know more about the RFC that governs CSV - http://tools.ietf.org/html/rfc4180
 
 Usage:
-    The core files of this repository are
-    a. csv_parser.hpp
-    b. csv_parser.cpp
 
-    This library exposes two public methods both with the same name - "parse_line" albeit different signatures.
-    a. The first, accepts an input line and a vector of strings which contains the parsed contents of the input line
-    b. The second accepts an input line, a vector which contains the header names and a map which which contains as key a value from the header and the corresponding field obtained by parsing the input line
-    Both these methods return a Boolean value that indicates whether the parsing was a success or a failure
+The core files of this repository are
 
-    A test file along with a sample CSV file is also included to test the library
-    The contents for the test being
-    a. test.cpp
-    b. test_case.csv
+a. csv_parser.hpp
 
-    For more details on how to create the object of the class contained in csv_parser refer the file test.cpp
+b. csv_parser.cpp
+
+This library exposes two public methods both with the same name - "parse_line" albeit different signatures.
+
+a. The first, accepts an input line and a vector of strings which contains the parsed contents of the input line
+
+b. The second accepts an input line, a vector which contains the header names and a map which which contains as key a value from the header and the corresponding field obtained by parsing the input line
+Both these methods return a Boolean value that indicates whether the parsing was a success or a failure
+
+A test file along with a sample CSV file is also included to test the library
+
+The contents for the test being
+
+a. test.cpp
+
+b. test_case.csv
+
+For more details on how to create the object of the class contained in csv_parser refer the file test.cpp
 
 Compilation:
+
     g++ -o csv_parser csv_parser.cpp test.cpp
 
 Features:
-    Handles every case except the embedded line quotes being present in the input line
-    For instance, lines like these are not supported
+Handles every case except the embedded line quotes being present in the input line
+For instance, lines like these are not supported
+
     1997,Ford,E350,"Go get one now
     they are going fast"
 
@@ -68,7 +81,8 @@ Sample Output
     CSV line - 
     Error encountered while parsing the input line
 
-    A test case around the second method is documented here
+A test case around the second method is documented here
+
     Key - Company ,Value - Ford
     Key - Model ,Value - E350
     Key - Year ,Value - 1997
