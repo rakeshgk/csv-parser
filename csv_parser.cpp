@@ -29,7 +29,7 @@ bool CSV_Parser :: parse_line(const STR& input_line, CSV_FIELDS& header_fields, 
     CSV_FIELDS output_fields;
     status = parse(input_line, output_fields);
 
-    if(output_fields.size() == header_fields.size())
+    if(status == true && output_fields.size() == header_fields.size())
     {
         VECTOR_ITR it1 = output_fields.begin();
         VECTOR_ITR it2 = header_fields.begin();
@@ -38,10 +38,7 @@ bool CSV_Parser :: parse_line(const STR& input_line, CSV_FIELDS& header_fields, 
             key_val.insert(MAP_ENTRY(*it2, *it1));
         }
     }
-    else
-    {
-        return false;
-    }
+    return status;
 }
 
 bool CSV_Parser :: parse(const STR& input_line, CSV_FIELDS& output_fields)
